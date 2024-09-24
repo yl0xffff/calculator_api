@@ -3,7 +3,7 @@ from flask_cors import CORS
 import os
 
 app = Flask(__name__)
-CORS(app, origins=["https://cityclub.netlify.app"])
+CORS(app)
 
 
 @app.route('/calculate', methods=['POST'])
@@ -30,6 +30,3 @@ def calculate():
     return jsonify({"result": result})
   except Exception as e:
     return jsonify({"error": str(e)}), 500
-
-if __name__ == '__main__':
-  app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 10000)))
