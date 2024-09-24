@@ -3,7 +3,7 @@ from flask import Flask, request, jsonify
    import os
 
    app = Flask(__name__)
-   CORS(app)
+   CORS(app, origins=["https://cityclub.netlify.app"])
 
    @app.route('/calculate', methods=['POST'])
    def calculate():
